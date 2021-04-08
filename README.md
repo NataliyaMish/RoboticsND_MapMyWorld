@@ -1,10 +1,11 @@
-# RoboticsND_GoChaseIt
+# RoboticsND_WhereAmI
 
 This is repository for the second project of Udacity Robotics Software Engineer Nanodegree.
 
-It includes two ROS packages:
-* my_robot package - holds my robot, the white ball, and my world;
-* ball_chaser package - includes drive_bot and process_image nodes.
+It includes three ROS packages:
+* my_robot package - holds my robot and my world;
+* pgm_map_creator package - [ROS package](https://github.com/udacity/pgm_map_creator) to create simulated world map in pgm format; 
+* teleop_twist_keyboard - [Teleop ROS package](https://github.com/ros-teleop/teleop_twist_keyboard) to control robot with keyboard 
 
 ## How to try them out?
 
@@ -20,7 +21,7 @@ $ cd ..
 #### Clone the packages in catkin_ws/src/
 ```sh
 $ cd /home/catkin_ws/src/
-$ git clone https://github.com/NataliyaMish/RoboticsND_GoChaseIt.git master
+$ git clone https://github.com/NataliyaMish/RoboticsND_WhereAmI.git master
 ```
 
 #### Build the packages
@@ -40,12 +41,16 @@ $ source devel/setup.bash
 $ roslaunch my_robot world.launch
 ```
 
-#### To launch drive_bot and process_image nodes, use
+#### To launch AMCL package nodes to localize the robot
 ```sh
-$ roslaunch ball_chaser ball_chaser.launch
+$ roslaunch my_robot amcl.launch
 ```
 
-#### Make robot chase the ball!
-Just outside of the world you will see a white ball. 
-Place it in front of the robot and see it moving towrds it!
-To stop robot, move the ball outside of its field of view.
+#### To run Teleop package to control the robot
+```sh
+$ rosrun teleop_twist_keyboard teleop_twist_keyboard.py
+```
+
+#### Localize the robot!
+Use the keyboard commands and drive the robot around. 
+In a short time you will see it localize itself.
