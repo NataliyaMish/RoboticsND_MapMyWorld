@@ -53,4 +53,19 @@ $ rosrun teleop_twist_keyboard teleop_twist_keyboard.py
 
 #### Localize the robot!
 Use the keyboard commands and drive the robot around. 
-In a short time you will see it localize itself.
+In a short time you will see it localize itself - see example below.
+
+**Step 1**
+![Step 1](/screenshots/step1.png?raw=true)
+
+**Step 2**
+![Step 2](/screenshots/step2.png?raw=true)
+
+**Step 3**
+![Step 2](/screenshots/step3.png?raw=true)
+
+**Step 4**
+![Step 4](/screenshots/step4.png?raw=true)
+
+**Step 5**
+![Step 5](/screenshots/step5.png?raw=true)
