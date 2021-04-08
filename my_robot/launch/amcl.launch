@@ -19,7 +19,7 @@
      <!-- Initial pose -->
      <param name="initial_pose_x" value="0.0"/>
      <param name="initial_pose_y" value="0.0"/>
-     <param name="initial_pose_a" value="-1.57"/>
+     <param name="initial_pose_a" value="0.0"/>
 
      <!-- Filter update with scans -->
      <param name="update_min_d" value="0.1"/>
