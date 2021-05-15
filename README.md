@@ -1,11 +1,12 @@
-# RoboticsND_WhereAmI
+# RoboticsND_MapMyWorld
 
-This is repository for the second project of Udacity Robotics Software Engineer Nanodegree.
+This is repository for the fourth project of Udacity Robotics Software Engineer Nanodegree.
 
-It includes three ROS packages:
+It includes two ROS packages:
 * my_robot package - holds my robot and my world;
-* pgm_map_creator package - [ROS package](https://github.com/udacity/pgm_map_creator) to create simulated world map in pgm format; 
-* teleop_twist_keyboard - [Teleop ROS package](https://github.com/ros-teleop/teleop_twist_keyboard) to control robot with keyboard 
+* teleop_twist_keyboard - [Teleop ROS package](https://github.com/ros-teleop/teleop_twist_keyboard) to control robot with keyboard
+
+Additonally, we will be using an [RTAB-MAP package](http://wiki.ros.org/rtabmap_ros) to map the robot environment.
 
 ## How to try them out?
 
@@ -21,7 +22,7 @@ $ cd ..
 #### Clone the packages in catkin_ws/src/
 ```sh
 $ cd /home/catkin_ws/src/
-$ git clone https://github.com/NataliyaMish/RoboticsND_WhereAmI.git master
+$ git clone https://github.com/NataliyaMish/RoboticsND_MapMyWorld.git master
 ```
 
 #### Build the packages
@@ -30,42 +31,26 @@ $ cd /home/catkin_ws/
 $ catkin_make
 ```
 
-#### After building the packages, source your environment
+#### Source your environment
 ```sh
 $ cd /home/catkin_ws/
 $ source devel/setup.bash
 ```
 
-#### Once the packages have been built, you can launch my_robot using
+#### Launch my_robot package
 ```sh
 $ roslaunch my_robot world.launch
 ```
 
-#### To launch AMCL package nodes to localize the robot
-```sh
-$ roslaunch my_robot amcl.launch
-```
-
-#### To run Teleop package to control the robot
+#### Run Teleop package to control the robot
 ```sh
 $ rosrun teleop_twist_keyboard teleop_twist_keyboard.py
 ```
 
-#### Localize the robot!
-Use the keyboard commands and drive the robot around. 
-In a short time you will see it localize itself - see example below.
+#### Launch the mapping node to map the environment
+```sh
+$ roslaunch my_robot mapping.launch
+```
 
-**Step 1**
-![Step 1](/screenshots/step1.png?raw=true)
-
-**Step 2**
-![Step 2](/screenshots/step2.png?raw=true)
-
-**Step 3**
-![Step 2](/screenshots/step3.png?raw=true)
-
-**Step 4**
-![Step 4](/screenshots/step4.png?raw=true)
-
-**Step 5**
-![Step 5](/screenshots/step5.png?raw=true)
+#### Map the environment!
+Use the keyboard commands and drive the robot around to generate a map of the environment.
